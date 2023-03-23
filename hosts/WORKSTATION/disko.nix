@@ -3,7 +3,7 @@
   disk = {
     main = {
       type = "disk";
-      device = "/dev/sdb";
+      device = "/dev/sda";
       content = {
         type = "table";
         format = "gpt";

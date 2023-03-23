@@ -13,12 +13,11 @@
     initrd.availableKernelModules = [ "ehci_pci" "ahci" "mpt3sas" "usbhid" "sd_mod" "sr_mod" ];
     kernelParams = [ "panic=1" "boot.panic_on_fail" ];
 
-    loader.efi.efiSysMountPoint = "/boot/efi";
+    loader.efi.canTouchEfiVariables = true;
     loader.grub = {
       efiSupport = true;
       efiInstallAsRemovable = true;
       configurationLimit = 14;
-      device = "nodev";
     };
   };
   systemd.enableEmergencyMode = false;
