@@ -1,7 +1,7 @@
 { ... }:
 {
   disk = {
-    vda = {
+    main = {
       type = "disk";
       device = "/dev/sdb";
       content = {
@@ -28,7 +28,7 @@
             end = "100%";
             content = {
               type = "btrfs";
-              extraArgs = "-f"; # Override existing partition
+              extraArgs = [ "-f" ]; # Override existing partition
               subvolumes = {
                 "/home" = {
                   mountOptions = [ "compress=zstd" ];
