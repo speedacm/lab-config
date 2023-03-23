@@ -1,0 +1,7 @@
+keys:
+  - &speedacm age1nzqhkcscwd9gflk9nnmnn3glkz0an2ygwpn09zjahyqu08yjr4asaen4ya
+creation_rules:
+  - path_regex: secrets/speedacm.yaml$
+    key_groups:
+    - age:
+      - *speedacm
