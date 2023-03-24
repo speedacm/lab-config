@@ -45,7 +45,7 @@
 
   # Disks
   boot.cleanTmpDir = true;
-  swapDevices = [{ device = "/tmp/swapfile"; size = 4096; }];
+  zramSwap.enable = true;
 
   # BTRFS Scrubbing
   services.btrfs.autoScrub = {
@@ -77,6 +77,7 @@
       "/var/log" # Keep system logs
       "/var/lib/docker" # Keep Docker junk
       "/var/lib/libvirt" # Keep KVM junk
+      "/var/lib/clamav"
       "/etc/nixos" # Not nuke my configuration
     ];
     files = [
