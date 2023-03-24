@@ -36,7 +36,7 @@
   time.timeZone = "America/Louisville";
   networking = {
     hostName = "WORKSTATION";
-    nameservers = [ "8.8.8.8" "1.1.1.1" ];
+    nameservers = [ "172.25.53.53" "172.25.53.253" ];
     useDHCP = false;
     interfaces.eno1.useDHCP = true;
     firewall.enable = true;
