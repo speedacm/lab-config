@@ -45,7 +45,7 @@
 
   # Disks
   boot.cleanTmpDir = true;
-  swapDevices = [{ device = "/swapfile"; size = 4096; }];
+  swapDevices = [{ device = "/tmp/swapfile"; size = 4096; }];
 
   # BTRFS Scrubbing
   services.btrfs.autoScrub = {
