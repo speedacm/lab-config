@@ -66,7 +66,8 @@
     
       nodes = {
         WORKSTATION = {
-          hostname = "WORKSTATION";
+          hostname = "172.25.32.202";
+          sshUser = "speedacm";
           profiles.system.path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.WORKSTATION;
         };
       };
