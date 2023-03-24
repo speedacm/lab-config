@@ -8,9 +8,9 @@ in {
   config = mkIf cfg.enable {
     services.openssh = {
       enable = true;
-      permitRootLogin = lib.mkForce "no";
-      passwordAuthentication = false;
-      kbdInteractiveAuthentication = false;
+      settings.permitRootLogin = lib.mkForce "no";
+      settings.passwordAuthentication = false;
+      settings.kbdInteractiveAuthentication = false;
     };
   };
 }

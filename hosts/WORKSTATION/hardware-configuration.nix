@@ -77,7 +77,8 @@
       "/var/log" # Keep system logs
       "/var/lib/docker" # Keep Docker junk
       "/var/lib/libvirt" # Keep KVM junk
-      "/var/lib/clamav"
+      "/var/lib/clamav" # ClamAV DB
+      "/var/lib/snipe-it" # Snipe-IT
       "/etc/nixos" # Not nuke my configuration
     ];
     files = [
