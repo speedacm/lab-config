@@ -15,9 +15,10 @@
 
     loader.efi.canTouchEfiVariables = true;
     loader.grub = {
+      enable = true;
       efiSupport = true;
-      efiInstallAsRemovable = true;
       configurationLimit = 14;
+      device = "nodev";
     };
   };
   systemd.enableEmergencyMode = false;
