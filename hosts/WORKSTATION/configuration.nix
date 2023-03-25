@@ -6,7 +6,7 @@
   services.cloudflared = {
     enable = true;
     tunnels = {
-      "00000000-0000-0000-0000-000000000000" = {
+      "cd216931-03fb-4406-9bc6-51fa9aa4afd9" = {
         credentialsFile = "${config.sops.secrets.cloudflared-creds.path}";
         ingress = {
           "snipe.speedacm.org" = "http://localhost:80";
@@ -21,6 +21,7 @@
   sops.secrets.snipe-appkey.group = "snipeit";
   services.snipe-it = {
     enable = true;
+    database.createLocally = true;
     hostName = "snipe.speedacm.org";
     appKeyFile = "${config.sops.secrets.snipe-appkey.path}";
   };

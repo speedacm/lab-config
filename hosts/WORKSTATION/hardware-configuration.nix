@@ -58,7 +58,7 @@
   services.beesd.filesystems = {
     system = {
       spec = "/nix";
-      hashTableSizeMB = 1024;
+      hashTableSizeMB = 512;
       verbosity = "crit";
       extraOptions = [ "--loadavg-target" "10.0" ];
     };
@@ -77,9 +77,9 @@
       "/var/log" # Keep system logs
       "/var/lib/docker" # Keep Docker junk
       "/var/lib/libvirt" # Keep KVM junk
-      "/var/lib/clamav" # ClamAV DB
-      "/var/lib/snipe-it" # Snipe-IT
-      "/etc/nixos" # Not nuke my configuration
+      { directory = "/var/lib/clamav"; user = "clamav"; group = "clamav"; } # ClamAV DB
+      { directory = "/var/lib/snipe-it"; user = "snipeit"; group = "snipeit"; } # Snipe-IT
+      { directory = "/var/lib/mysql"; user = "mysql"; group = "mysql"; } # Snipe-IT      
     ];
     files = [
       "/etc/machine-id" # Honestly no idea why we need this to be the same between boots
