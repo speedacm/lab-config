@@ -40,8 +40,12 @@
     useDHCP = false;
     interfaces.eno1.useDHCP = true;
     firewall.enable = true;
+    #nat = {
+    #  enable = true;
+    #  internalInterfaces = [ "ve-*" ];
+    #  externalInterface = "eno1";
+    #};
   };
-
 
   # Disks
   boot.cleanTmpDir = true;
@@ -75,11 +79,7 @@
     hideMounts = true;
     directories = [
       "/var/log" # Keep system logs
-      "/var/lib/docker" # Keep Docker junk
-      "/var/lib/libvirt" # Keep KVM junk
       { directory = "/var/lib/clamav"; user = "clamav"; group = "clamav"; } # ClamAV DB
-      { directory = "/var/lib/snipe-it"; user = "snipeit"; group = "snipeit"; } # Snipe-IT
-      { directory = "/var/lib/mysql"; user = "mysql"; group = "mysql"; } # Snipe-IT      
     ];
     files = [
       "/etc/machine-id" # Honestly no idea why we need this to be the same between boots

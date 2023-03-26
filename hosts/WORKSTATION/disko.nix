@@ -36,6 +36,9 @@
                 "/persist" = {
                   mountOptions = [ "compress=zstd" ];
                 };
+                "/ACM" = {
+                  mountOptions = [ "compress=zstd" ];
+                };
                 "/tmp" = {
                   # /tmp gets cleared on boot
                   mountOptions = [ "noatime" ];

@@ -44,7 +44,6 @@
             modules = {
               ssh.enable = true;
               harden.enable = true;
-              virtualisation.docker = true;
               zsh.enable = true;
             };
           }
